@@ -1,0 +1,16 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "title": "json-server"
+    },
+    {
+      "title": "Bal",
+      "id": 2
+    },
+    {
+      "title": "Sawa",
+      "id": 3
+    }
+  ]
+}
