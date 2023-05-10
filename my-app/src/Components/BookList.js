@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import BookShow from "./BookShow";
 import "bootstrap/dist/css/bootstrap.css";
+import BooksContext from "../Context/books";
 
-const BookList = ({ bookList, deleteBook, editBook }) => {
-  const renderBooks = bookList.map((book) => {
+const BookList = () => {
+  const { books } = useContext(BooksContext);
+  const renderBooks = books.map((book) => {
     return (
       <div className="col-4" key={book.id}>
-        <BookShow book={book} editBook={editBook} deleteBook={deleteBook} />
+        <BookShow book={book} />
       </div>
     );
   });
