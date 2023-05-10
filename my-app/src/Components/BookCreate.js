@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import BooksContext from "../Context/books";
 import "bootstrap/dist/css/bootstrap.css";
 
-const BookCreate = ({ onSubmit }) => {
+const BookCreate = () => {
+  const { createBook } = useContext(BooksContext);
   const [title, setTitle] = useState("");
   const handleInputChange = (event) => {
     setTitle(event.target.value);
@@ -10,7 +12,7 @@ const BookCreate = ({ onSubmit }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (title !== "") {
-      onSubmit(title);
+      createBook(title);
       setTitle("");
     }
   };

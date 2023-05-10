@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import BookEdit from "./BookEdit";
+import BooksContext from "../Context/books";
 
-export const BookShow = ({ book, deleteBook, editBook }) => {
+export const BookShow = ({ book }) => {
+  const { deleteBook } = useContext(BooksContext);
   const [isEdit, setIsEdit] = useState(false);
   const handleDeleteClick = () => {
     deleteBook(book.id);
@@ -11,9 +13,8 @@ export const BookShow = ({ book, deleteBook, editBook }) => {
     setIsEdit(!isEdit);
   };
 
-  const handleEditSubmit = (book) => {
-    editBook(book);
-    setIsEdit(!isEdit);
+  const handleEditSubmit = () => {
+    setIsEdit(false);
   };
 
   let content = isEdit ? (
