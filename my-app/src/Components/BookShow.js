@@ -44,7 +44,7 @@ export const BookShow = ({ book }) => {
       <img
         src={`https://picsum.photos/300/200?random=${book.id}`}
         className="card-img-top"
-        alt="No image found"
+        alt="No pic found"
       />
       {content}
     </div>
